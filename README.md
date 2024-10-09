@@ -36,7 +36,7 @@ Self evaluation:
         </tr>
         <tr>
             <td>Display the location for each move in the format (row, col) in the move history list</td>
-            <td>&cross;</td>
+            <td>&check;</td>
             <td>1.8</td>
         </tr>
         <tr>
@@ -46,7 +46,7 @@ Self evaluation:
         </tr>
         <tr>
             <td colspan=2 align=center><strong>Total</strong></td>
-            <td><strong>8.2</strong></td>
+            <td><strong>10</strong></td>
         </tr>
     </tbody>
 </table>

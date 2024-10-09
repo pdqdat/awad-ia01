@@ -22,7 +22,9 @@ function Board({ xIsNext, squares, onPlay }) {
             nextSquares[i] = "O";
         }
 
-        onPlay(nextSquares);
+        const location = { row: Math.floor(i / 3) + 1, col: (i % 3) + 1 };
+
+        onPlay(nextSquares, location);
     }
 
     let status;
@@ -30,6 +32,7 @@ function Board({ xIsNext, squares, onPlay }) {
     const winnerInfo = calculateWinner(squares);
     const winner = winnerInfo.winner;
     const winningSquares = winnerInfo.winningSquares || [];
+
     const isDraw = winnerInfo.draw;
 
     if (winner) {
@@ -76,15 +79,16 @@ function Board({ xIsNext, squares, onPlay }) {
 }
 
 export default function Game() {
-    const [history, setHistory] = useState([Array(9).fill(null)]);
+    const [history, setHistory] = useState([{ squares: Array(9).fill(null), location: null }]);
     const [currentMove, setCurrentMove] = useState(0);
     const [isAscending, setIsAscending] = useState(true);
 
     const xIsNext = currentMove % 2 === 0;
-    const currentSquares = history[currentMove];
 
-    function handlePlay(nextSquares) {
-        const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
+    const currentSquares = history[currentMove].squares;
+
+    function handlePlay(nextSquares, location) {
+        const nextHistory = [...history.slice(0, currentMove + 1), { squares: nextSquares, location }];
 
         setHistory(nextHistory);
         setCurrentMove(nextHistory.length - 1);
@@ -98,13 +102,15 @@ export default function Game() {
         setIsAscending(!isAscending);
     };
 
-    const moves = history.map((squares, move) => {
-        const desc = move ? "Go to move #" + move : "Go to game start";
+    const moves = history.map((step, move) => {
+        const desc = move ? `Go to move #${move} (${step.location.row}, ${step.location.col})` : "Go to game start";
 
         return (
             <li key={move}>
                 {move === currentMove ? (
-                    <span>You are at move #{move}</span>
+                    <span>
+                        You are at move #{move} {step.location ? `(${step.location.row}, ${step.location.col})` : ""}
+                    </span>
                 ) : (
                     <button onClick={() => jumpTo(move)}>{desc}</button>
                 )}
