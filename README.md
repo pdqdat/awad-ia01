@@ -1,10 +1,20 @@
 # HCMUS Advanced Web App Programming
 
-## IA01 - React tutorial
-
+**IA01 - React tutorial**
 20120268 - Phan Duong Quoc Dat
 
-Self evaluation:
+## How to view the project
+
+Clone the repository and run the following commands:
+
+```bash
+npm install
+npm run dev
+```
+
+or visit the [hosted version](https://datphan.id.vn/awp-ia01/).
+
+## Self evaluation
 
 <table>
     <thead>
