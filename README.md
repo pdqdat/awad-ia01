@@ -26,7 +26,7 @@ Self evaluation:
         </tr>
         <tr>
             <td>Add a toggle button that lets you sort the moves in either ascending or descending order</td>
-            <td>&cross;</td>
+            <td>&check;</td>
             <td>1.8</td>
         </tr>
         <tr>
@@ -46,7 +46,7 @@ Self evaluation:
         </tr>
         <tr>
             <td colspan=2 align=center><strong>Total</strong></td>
-            <td><strong>4.6</strong></td>
+            <td><strong>6.4</strong></td>
         </tr>
     </tbody>
 </table>

@@ -65,6 +65,7 @@ function Board({ xIsNext, squares, onPlay }) {
 export default function Game() {
     const [history, setHistory] = useState([Array(9).fill(null)]);
     const [currentMove, setCurrentMove] = useState(0);
+    const [isAscending, setIsAscending] = useState(true);
     const xIsNext = currentMove % 2 === 0;
     const currentSquares = history[currentMove];
 
@@ -78,6 +79,10 @@ export default function Game() {
     function jumpTo(nextMove) {
         setCurrentMove(nextMove);
     }
+
+    const toggleSortOrder = () => {
+        setIsAscending(!isAscending);
+    };
 
     const moves = history.map((squares, move) => {
         const desc = move ? "Go to move #" + move : "Go to game start";
@@ -93,6 +98,10 @@ export default function Game() {
         );
     });
 
+    if (!isAscending) {
+        moves.reverse();
+    }
+
     return (
         <div className="game">
             <div className="game-board">
@@ -100,8 +109,29 @@ export default function Game() {
             </div>
 
             <div className="game-info">
+                <button onClick={toggleSortOrder}>{isAscending ? "Sort Descending ↓" : "Sort Ascending ↑"}</button>
+
                 <ul>{moves}</ul>
             </div>
+
+            <footer>
+                <p>
+                    <strong>HCMUS Advanced Web Programming</strong>
+                </p>
+
+                <p>
+                    <a href="https://github.com/pdqdat/awp-ia01" target="_blank">
+                        <st>IA01 Assessment &#8599;</st>
+                    </a>{" "}
+                </p>
+
+                <p>
+                    By{" "}
+                    <a href="https://github.com/pdqdat" target="_blank">
+                        Dat Phan
+                    </a>
+                </p>
+            </footer>
         </div>
     );
 }

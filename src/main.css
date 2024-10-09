@@ -80,11 +80,36 @@ body {
 .status {
     margin-bottom: 10px;
 }
+
 .game {
     display: flex;
     flex-direction: row;
+    gap: 20px;
 }
 
 .game-info {
     margin-left: 20px;
+}
+
+.game-info button {
+    font-size: 16px;
+}
+
+.game-info ul li {
+    margin-bottom: 3px;
+}
+
+footer {
+    margin-left: 100px;
+    text-align: center;
+    background: #f8f9fa;
+    border: 0.5px solid #ddd;
+    border-radius: 5px;
+    padding: 0 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
 }
