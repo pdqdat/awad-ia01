@@ -31,7 +31,7 @@ Self evaluation:
         </tr>
         <tr>
             <td>When someone wins, highlight the three squares that caused the win</td>
-            <td>&cross;</td>
+            <td>&check;</td>
             <td>1.8</td>
         </tr>
         <tr>
@@ -46,7 +46,7 @@ Self evaluation:
         </tr>
         <tr>
             <td colspan=2 align=center><strong>Total</strong></td>
-            <td><strong>6.4</strong></td>
+            <td><strong>8.2</strong></td>
         </tr>
     </tbody>
 </table>
