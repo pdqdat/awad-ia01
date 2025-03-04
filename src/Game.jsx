@@ -136,11 +136,11 @@ export default function Game() {
 
             <footer>
                 <p>
-                    <strong>HCMUS Advanced Web Programming</strong>
+                    <strong>HCMUS Advanced Web App Development</strong>
                 </p>
 
                 <p>
-                    <a href="https://github.com/pdqdat/awp-ia01" target="_blank">
+                    <a href="https://github.com/pdqdat/awad-ia01" target="_blank">
                         <strong>IA01 Assessment &#8599;</strong>
                     </a>
                 </p>
